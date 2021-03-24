@@ -16,11 +16,13 @@
       <p></p>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
     </div>
-    <img src="{{ featured_image_url }}" alt="Mars_closeup">
-    <h2>The Latest Mars News Title is: {{ mars_data.news_title }}</h2>
+    <img src="{{ mars_data.featured_image_url }}" alt="Mars_closeup">
+    <h2>Latest Mars News {{ mars_data.news_title }}</h2>
     <h2> {{ mars_data.news_p }}</h2>
-    <h2> Mars Facts: {{mars_data.mars_facts}}</h2>
-    <h2>Mars Hemispheres {{ mars_data.hemisphere_image_urls }}</h2>
+    <hr>
+    <h2> Mars Facts: {{mars_data.mars_facts | safe}}</h2>
+    
+    <img src="{{ mars_data.hemisphere_image_urls| safe }}" alt="Hemishere images">
   </div>
   </div>
 </body>
